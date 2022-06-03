@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace ConsoleApp1_С_sharp_Events_
 {
-    public class KeyListener
+    public class KeyListener  
     {
         public delegate void KeyDelegate();
         public event KeyDelegate KeyPress;
@@ -18,7 +18,7 @@ namespace ConsoleApp1_С_sharp_Events_
             Piano piano = new Piano();
             Drums drums = new Drums();
             Skripka skripka = new Skripka();
-            while (true)
+            while (true)  // у вас есть на выбор три инструмента - пианино, барабаны и скрипка, при нажатии от 1 - 3 срабатывает собитие и вызывается метод того или иного инструмента
             {
                 Console.WriteLine("=============================================");
                 Console.WriteLine("Chose your instrument:");
@@ -62,7 +62,7 @@ namespace ConsoleApp1_С_sharp_Events_
             Console.WriteLine("=============================================");
             Console.WriteLine("Press from A - K (second level of keyboard) to chose melody");
             Console.WriteLine("Esc - to leave the piano");
-            while (true)
+            while (true)   // каждое нажатие на клавиатуру - это нота. Звуковые файлы должны быть скачены чтоб послушать композицию
             {
                 ConsoleKeyInfo key = Console.ReadKey(true);
                 if (key.Key == ConsoleKey.A) { sound = new SoundPlayer(path + "do.wav"); Console.Write("до "); }
